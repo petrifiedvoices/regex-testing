@@ -2,7 +2,7 @@
 
 # AIM of this exercise:
 
-I have several .jpg images in the folder ```images``` and I need to distribute them into site folder. I want to do it by using terminal, not manually.
+I have several .jpg images in the folder ```images``` and I need to create new subfolders based on the names of the images and distribute the images to their respective folders. I want to do it by using terminal, not manually.
 
 I need to do the following steps:
 
