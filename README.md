@@ -2,8 +2,12 @@
 
 # AIM of this exercise:
 
+I have several .jpg images in the folder ```images``` and I need to distribute them into site folder. I want to do it by using terminal, not manually.
+
+I need to do the following steps:
+
 1. Create one folder for each site labelled by the three to four digits. The site digits are in the begining of the image names, followed by underscore.
-2. Move all images to their corresponding site folder.
+2. Select and move all images to their corresponding site folder.
 
 # Progress:
 So far I was able to create folders, but I can't figure out how to move the images into them. 
