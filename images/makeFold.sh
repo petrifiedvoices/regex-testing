@@ -4,8 +4,8 @@
 #	mkdir $prefix ; #creates a directory called by variable prefix
 #	done
 
+cwd=`pwd`
 for prefix in $(ls -1 | cut -d'_' -f1 | sort)
 do	
-	find . -name '$prefix*.jpg' | mkdir -p $prefix | mv '$prefix*.jpg' . /$prefix ;
+	find . -name "$prefix" | mkdir -p $prefix | mv "$cwd/$prefix"* "$cwd/$prefix/" ; # fixed the mv by following https://unix.stackexchange.com/questions/77007/mv-cannot-stat-no-such-file-or-directory-in-shell-script
 done
-
