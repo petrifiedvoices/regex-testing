@@ -7,10 +7,13 @@ IFS=$'\n\t'
 # Before committing, run https://www.shellcheck.net/
 
 #Changed because https://github.com/koalaman/shellcheck/wiki/SC2044
-for image in $(find images/ -name "*.jpg" -o -name "*.png" );
+
+while IFS= read -r -d '' image
 do
-	printf "* %s" "$image"
-	image_dir=$(echo "$image" | cut -d'/' -f2 | cut -d'_' -f1)
-	mkdir -p "sorted/$image_dir"
-	cp "$image" "sorted/$image_dir"
-done
+	if [ -f "$image" ]; then
+		image_dir=$(echo "$image" | cut -d'/' -f2 | cut -d'_' -f1)
+		echo "moving $image -> sorted/$image_dir/"
+		mkdir -p "sorted/$image_dir"
+		cp "$image" "sorted/$image_dir"
+	fi
+done <   <(find images/ -type f -print0 -name "*.jpg" -o -name "*.png" )
